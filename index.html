@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#edf4ec">
+    <title>사과 합 게임</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <div class="title-group">
+          <div class="brand-line">
+            <span class="apple-mark" aria-hidden="true">🍎</span>
+            <span class="eyebrow">FRUIT NUMBER GAME</span>
+          </div>
+          <h1>사과 합 게임</h1>
+        </div>
+        <button class="restart-button" id="restart" type="button" aria-label="게임 시작">
+          <span class="restart-icon" aria-hidden="true">↻</span>
+          <span id="restart-label">시작</span>
+        </button>
+      </header>
+
+      <section class="scoreboard" aria-label="게임 기록">
+        <div class="metric timer-metric">
+          <span class="metric-label">남은 시간</span>
+          <output class="metric-value timer-value" id="timer" aria-label="남은 시간">01:00</output>
+          <span class="timer-track" aria-hidden="true"><span id="timer-progress"></span></span>
+        </div>
+        <div class="metric">
+          <span class="metric-label">현재 점수</span>
+          <output class="metric-value" id="score" aria-live="polite">0</output>
+        </div>
+        <div class="metric">
+          <span class="metric-label">최고 점수</span>
+          <output class="metric-value best-value" id="best-score">0</output>
+        </div>
+      </section>
+
+      <section class="play-area" aria-label="숫자 게임">
+        <div class="board" id="board" role="group" aria-label="8행 8열 숫자 격자"></div>
+        <div class="selection-status" aria-live="polite" aria-atomic="true">
+          <span class="status-dot" id="status-dot" aria-hidden="true"></span>
+          <span id="game-status">시작 버튼을 눌러주세요</span>
+          <span class="selection-total" id="selection-total"></span>
+        </div>
+      </section>
+    </main>
+    <canvas id="flower-confetti" aria-hidden="true"></canvas>
+  </body>
+</html>
